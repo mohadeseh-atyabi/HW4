@@ -25,7 +25,8 @@ public class Main {
             System.out.println("4) Vote");
             System.out.println("5) Results of special voting");
             System.out.println("6) Results of all voting");
-            System.out.println("7) Exit");
+            System.out.println("7) Random voting");
+            System.out.println("8) Exit");
             input = myObj.nextLine();
 
             switch (input){
@@ -105,6 +106,23 @@ public class Main {
                     break;
 
                 case "7":
+                    int i;
+                    String name1 = new String();
+                    System.out.println("Enter the numbet of voting");
+                    index = myObj.nextInt();
+                    input = myObj.nextLine();
+                    System.out.println("Enter your first and last name in order in one line");
+                    name1 = myObj.nextLine();
+                    Random generate = new Random();
+                    i = generate.nextInt(mySystem.getSize(index));
+                    System.out.println("Your choice is " + mySystem.stringOfRandom(index,i));
+                    ArrayList<String > toAdd = new ArrayList<String>();
+                    toAdd.add(mySystem.stringOfRandom(index,i));
+                    mySystem.vote(index,name1,toAdd);
+
+                    break;
+
+                case "8":
                     run = false;
                     break;
 
