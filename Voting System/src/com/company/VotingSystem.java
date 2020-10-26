@@ -90,4 +90,22 @@ public class VotingSystem {
         Voting it = votingList.get(index-1);
         return it.getType();
     }
+    
+    public int getSize(int index){
+        return votingList.get(index-1).getPolls().size();
+    }
+
+    public String stringOfRandom(int index, int indexOfChoice){
+        Voting it = votingList.get(index-1);
+        int i=0;
+        String res= new String();
+        for(Map.Entry<String, HashSet<Vote>> choice : it.getPolls().entrySet()){
+            if(i==indexOfChoice){
+                res = choice.getKey();
+                break;
+            }
+            i++;
+        }
+        return res;
+    }
 }
