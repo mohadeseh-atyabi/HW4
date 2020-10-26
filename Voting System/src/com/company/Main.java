@@ -111,6 +111,12 @@ public class Main {
                     System.out.println("Enter the numbet of voting");
                     index = myObj.nextInt();
                     input = myObj.nextLine();
+                    
+                    if(mySystem.getType(index)==1){
+                        System.out.println("Just 0 type voting have random vote!");
+                        break;
+                    }
+                    
                     System.out.println("Enter your first and last name in order in one line");
                     name1 = myObj.nextLine();
                     Random generate = new Random();
